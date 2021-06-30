@@ -37,7 +37,7 @@
   <textarea class="get" placeholder="Encrypted text" readonly></textarea>
   </div>
 <footer>
-  <button onclick="copy()">copy</button>
+  <button id="foot" onclick="copy()">copy</button>
   </footer>
   <style>
 
@@ -111,7 +111,7 @@
 
      width: 600px;
 
-     height: 250px;
+     height: 200px;
 
      outline: none;
 
@@ -141,7 +141,11 @@ margin:0 auto;
 
 
    }
-
+#foot{
+    position:absolute;
+  top:70%;left:50%;
+  transform:translate(-50%,0);
+    }
     
 
   </style>

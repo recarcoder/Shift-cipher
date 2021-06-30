@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+
+</head>
+
+<body onload="rot()">
+
+<b>shift:</b>
+
+<input id="shift" oninput="rot()" value="13" type="text"></input>
+
+  <div class="">
+
+    
+
+  <h1>Caesar or Shift cipher</h1>
+
+    <p>Example: it replace "a" with "n" and "b" with "o"</p>
+
+  <textarea oninput="rot()" name="text" id="text" placeholder="text">hello world</textarea>
+
+  <h1 class="encrypt">Encrypted text</h1>
+
+  <textarea class="get" placeholder="Encrypted text" readonly></textarea>
+
+  </div>
+
+  <style>
+
+  input{
+
+      height:40px;
+
+      width:80px;
+
+  }
+
+  h1{
+
+    text-align: center;
+
+  }
+
+  div{
+
+    width: 60%;
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    position: absolute;
+
+    top: 0;left: 50%;
+
+    transform: translate(-50%,0);
+
+  }
+
+   #text{
+
+     font-size: 1.2rem;
+
+     color:rgba(22,85,216,0.847) ;
+
+     height: 100px;
+
+     width: 600px;
+
+     position: absolute;
+
+     top: 20%;left:50%;
+
+     transform: translate(-50%,0);
+
+     border: 0;
+
+     border-bottom: 1px solid rgba(9,170,17,0.925);
+
+     outline: none;
+
+     padding: 0;margin: 0;
+
+   } 
+
+   p{
+
+     text-align: center;
+
+     color: red;
+
+   }
+
+   .get{
+
+     width: 600px;
+
+     height: 250px;
+
+     outline: none;
+
+     border: 0;
+
+     border-bottom: 1px solid black;
+
+     font-size: 1.5rem;
+
+     color: rgba(169,16,220,0.966);
+
+     position: absolute;
+
+     top: 50%;left:50%;
+
+     transform: translate(-50%,0);
+
+     
+
+   }
+
+   .encrypt{
+
+     position: absolute;
+
+     top: 40%;left:50%;
+
+     transform: translate(-50%,0);
+
+   }
+
+    
+
+  </style>
+
+  <script type="text/javascript" charset="utf-8">
+
+   
+
+ function rot() {
+
+   let sitr,alpha,letter,arr,result;
+
+     sitr = String(document.querySelector('#text').value).toLowerCase(); 
+
+     
+
+alpha = 'abcdefghijklmnopqrstuvwxyz'
+
+ letter = 0;
+
+ arr = [];
+
+for (let i = 0; i < sitr.length; i++) {
+
+if(alpha.match(sitr[i])){ 
+
+  letter = alpha.indexOf(sitr[i]) + parseInt(document.getElementById("shift").value);
+
+  letter = parseInt(letter);
+
+  if(letter >=26){
+
+    letter = letter-26;
+
+  }
+
+ arr.push(alpha[letter]);
+
+}
+
+else{
+
+    arr.push(sitr[i]);
+
+  }
+
+}
+
+ result = String(arr).replace(/,/g, "");
+
+    
+
+document.querySelector('.get').innerHTML = result;
+
+}
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!--
+encrypt text based on equation y = 7x - 7
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="io()">
+    <h1>Encrypter</h1>
+    <input id="input" type="text" placeholder=" enter_text">
+    <input id="output" type="text" placeholder=" encrypted_text" readonly>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        input {
+            margin: 0 auto;
+            display: block;
+            margin-top: 30px;
+            width: 90vw;
+            height: 2rem;
+            font-size: 1.2rem;
+            outline: none;
+            border: 2px solid rgba(55,192,227,0.9);
+            border-radius:5px;
+            color: rgba(226,128,23,0.6);
+            background-color: rgba(200,200,200,0.3);
+        }
+        input[readonly] {
+            border: 2px solid rgba(25,207,74,0.9);
+            color: rgba(201,66,24,0.9);
+        }
+    </style>
+    <script>
+        function crypt(str) {
+            let alph = 'abcdefghijklmnopqrstuvwxyz';
+            let eq = " y=7x-7"; //algorithm based on this equation
+            let encrypt_text = '';
+            for (let i = 0; i < str.length; i++) {
+                if (alph.includes(str[i])) {
+                    let ind = alph.indexOf(str[i]);
+                    let num = ((7*ind)%26)-7;
+                    if (num < 0) {
+                        num += 26;
+                    }
+                    let enp = alph[num];
+                    encrypt_text += enp;
+                } else {
+                    encrypt_text += str[i];
+                }
+            }
+            return encrypt_text;
+        }
+        function io() {
+            output.value = crypt(input.value);
+        }
+        var input = document.getElementById('input');
+        var output = document.getElementById('output');
+        input.addEventListener('input', io);
+    </script>
+</body>
+</html>

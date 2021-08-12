@@ -1,2 +1,2 @@
 # Shift-ciphe
-link:view-source:https://recarcoder.github.io/Shift-cipher/
+link:view-source:https://recarcoder.github.io/Encrypter/

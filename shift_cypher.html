@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shift Cyper</title>
+</head>
+<body>
+    <h1>Shift cypher</h1>
+    <label for="shif">shift:</label>
+    <input id="chng" name="shif" oninput="shift()" type="number" value="13">
+    <input id="text" oninput="shift()" type="text" placeholder=" enter_text">
+    <input id="got" type="text" placeholder=" cypher_text" readonly>
+    <style>
+        body {
+            background-color: rgba(213,215,216,0.2);
+        }
+        h1 {
+            text-align: center;
+        }
+        input {
+            margin: 0 auto;
+            display: block;
+            margin-top: 30px;
+            width: 90vw;
+            height: 2rem;
+            font-size: 1.2rem;
+            outline: none;
+            border: 2px solid rgba(239,125,8,0.8);
+            border-radius: 5px;
+            color: rgba(30,135,239,0.8);
+            background-color: rgba(247,248,248,0.1);
+        }
+        input[readonly] {
+            border: 2px solid rgba(148,6,216,0.8);
+            color: rgba(228,10,185,0.8);
+            background-color: rgba(247,248,248,0.8);
+        }
+        label {
+            margin-left: 5vw;
+            font-size: 1.2rem;
+        }
+        #chng {
+            width: 70px;
+            display: inline-block;
+            margin-left: 10px;
+            color: rgba(53,53,53,0.6);
+            background-color: rgba(247,248,248,0.8);
+        }
+    </style>
+    <script>
+        function shift() {
+            let alp = 'abcdefghijklmnopqrstuvwxyz';
+            let text = document.getElementById('text');
+            let shift = '';
+            let out = document.getElementById('got');
+            let chng = parseInt(document.getElementById('chng').value);
+            console.log(chng);
+            for (let i = 0; i < text.value.length; i++) {
+                if (alp.includes(text.value[i])) {
+                    let leter = (alp.indexOf(text.value[i])+chng)%26;
+                    shift += alp[leter];
+                } else {
+                    shift += text.value[i];
+                }
+            }
+            out.value = shift;
+        }
+    </script>
+</body>
+</html>

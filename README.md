@@ -1,2 +1,2 @@
-# Shift-ciphe
+# Encrypt
 link:view-source:https://recarcoder.github.io/encrypter/

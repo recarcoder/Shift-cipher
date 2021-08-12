@@ -1,2 +1,2 @@
 # Shift-ciphe
-link:view-source:https://recarcoder.github.io/ncrypter/
+link:view-source:https://recarcoder.github.io/encrypter/

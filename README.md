@@ -1,2 +1,5 @@
 # Encrypt
-link:view-source:https://recarcoder.github.io/encrypter/
+
+shift_cipher:https://recarcoder.github.io/encrypter/
+<br>
+equation_encrypt:

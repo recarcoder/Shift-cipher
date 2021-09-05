@@ -1,5 +1,5 @@
 # Encrypt
 
-shift_cipher: https:
+shift_cipher
 <br>
 equation_encrypt

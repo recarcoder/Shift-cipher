@@ -1,5 +1,5 @@
 # Encrypt
 
-shift_cipher: https://recarcoder.github.io/encrypter/shift_cipher.html
+shift_cipher: https:
 <br>
-equation_encrypt: https://recarcoder.github.io/encrypter/equation_encrypt.html
+equation_encrypt
